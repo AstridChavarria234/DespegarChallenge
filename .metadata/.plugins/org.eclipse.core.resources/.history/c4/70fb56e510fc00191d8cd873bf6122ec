@@ -1,0 +1,89 @@
+package co.com.accenture.certification.challengedespegar.tasks;
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+
+
+import co.com.accenture.certification.challengedespegar.interactions.Scroll;
+import co.com.accenture.certification.challengedespegar.interactions.WaitSeconds;
+import co.com.accenture.certification.challengedespegar.userinterfaces.TravelerData;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+
+
+public class InsertTravelerData implements Task {
+	
+	
+	 private String name; 
+	 private String lastname; 
+	 private String identification; 
+	 private String department; 
+	 private String city; 
+	 private String adress; 
+	 private String day;
+	 private String month; 
+	 private String year;
+	 
+	public InsertTravelerData(String name, String lastname, String identification, String department, String city,
+			String adress, String day, String month, String year) {
+	
+		this.name = name;
+		this.lastname = lastname;
+		this.identification = identification;
+		this.department = department;
+		this.city = city;
+		this.adress = adress;
+		this.day = day;
+		this.month = month;
+		this.year = year;
+	}
+
+
+
+	@Override
+	public <T extends Actor> void performAs(T actor) {
+		
+	    actor.attemptsTo(Click.on(TravelerData.PAYMENT_TYPE));
+        WaitUntil.the(TravelerData.TITLE, isVisible());
+        
+        actor.attemptsTo( WaitSeconds.inThePage(10),Scroll.to(TravelerData.NAME));     
+        actor.attemptsTo(Click.on(TravelerData.NAME),
+                            Enter.theValue(name).into(TravelerData.NAME),
+                            Click.on(TravelerData.LASTNAME),
+                            Enter.theValue(lastname).into(TravelerData.LASTNAME),
+                            Click.on(TravelerData.ID),
+                            Enter.theValue(identification).into(TravelerData.ID),
+                            Click.on(TravelerData.DEPARTMENT),
+                            Click.on(TravelerData.CHOOSE_DEPARTMENT),
+                            Click.on(TravelerData.CITY),
+                            Enter.theValue(city).into(TravelerData.CITY),
+                            Click.on(TravelerData.CHOOSE_CITY),
+                            Click.on(TravelerData.ADRESS),
+                            Enter.theValue(adress).into(TravelerData.ADRESS));
+                            
+        
+         
+        actor.attemptsTo(Scroll.to(TravelerData.NAME_TRAVEL), 
+        		Click.on(TravelerData.NAME_TRAVEL),
+                Enter.theValue(name).into(TravelerData.NAME_TRAVEL),
+                Click.on(TravelerData.LASTNAME_TRAVEL),
+                Enter.theValue(lastname).into(TravelerData.LASTNAME_TRAVEL),
+                Click.on(TravelerData.ID_TRAVEL),
+                Enter.theValue(identification).into(TravelerData.ID_TRAVEL));
+
+        		
+										
+		
+	}
+	
+	
+	
+	public static  InsertTravelerData yourBasicInformation(String name, String lastName, String identificationNumber, String department, String city, String adress,String day,String month,String year){
+        return instrumented( InsertTravelerData.class, name,  lastName, identificationNumber,  department, city,adress,day,month,year);
+    }
+
+}

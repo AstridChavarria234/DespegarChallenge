@@ -1,0 +1,29 @@
+package co.com.accenture.certification.challengedespegar.stepdefinitions;
+
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.thucydides.core.annotations.Managed;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import org.openqa.selenium.WebDriver;
+
+import co.com.accenture.certification.challengedespegar.questions.ValidateData;
+import co.com.accenture.certification.challengedespegar.tasks.InsertFlightData;
+import co.com.accenture.certification.challengedespegar.tasks.InsertTravelerData;
+import co.com.accenture.certification.challengedespegar.tasks.Navigate;
+import co.com.accenture.certification.challengedespegar.userinterfaces.OptionPage;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+
+public class FlightReserveStepDefinition {
+
+
+
+	
+}
+

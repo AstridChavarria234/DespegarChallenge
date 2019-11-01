@@ -1,0 +1,28 @@
+package co.com.accenture.certification.challengedespegar.questions;
+
+import co.com.accenture.certification.challengedespegar.userinterfaces.TravelerData;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.questions.Text;
+
+public class ValidateData  implements Question<Boolean>  {
+
+	@Override
+	public Boolean answeredBy(Actor actor) {
+		if(Text.of(TravelerData.NAME).viewedBy(actor).asString().equalsIgnoreCase("Astrid") &&  
+   		     Text.of(TravelerData.LASTNAME).viewedBy(actor).asString().equalsIgnoreCase("Chavarria")){
+   	  
+   	  return true;
+   	  
+     }else 
+   	  return false;
+
+	}
+	
+	
+	 public static  ValidateData data(){
+	        return new ValidateData();
+
+}
+	 
+}

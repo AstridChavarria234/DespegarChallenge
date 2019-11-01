@@ -1,0 +1,14 @@
+webdriver.driver=chrome
+
+
+serenity.project.name = ChallengeDespegar
+thucydides.driver.capabilities = chrome
+
+webdriver.chrome.driver= chromedriver.exe
+
+serenity.test.root=co.com.accenture.automation.ChallengeDespegar.stepdefinitions
+ 
+webdriver.timeouts.implicitlywait = 1000
+
+
+

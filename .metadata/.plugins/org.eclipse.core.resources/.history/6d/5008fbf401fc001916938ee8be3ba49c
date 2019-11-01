@@ -1,0 +1,40 @@
+package co.com.accenture.certification.challengedespegar.questions;
+
+import co.com.accenture.certification.challengedespegar.userinterfaces.TravelerData;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.questions.Text;
+
+public class ValidateData  implements Question<Boolean>  {
+	
+	
+	private String name; 
+	private String lastname; 
+
+	public ValidateData(String name, String lastname) {
+		this.name= name; 
+		this.lastname = lastname; 
+	}
+
+
+	@Override
+	public Boolean answeredBy(Actor actor) {
+		
+		String val_name=Text.of(TravelerData.VALIDATION_NAME).viewedBy(actor).asString(); 
+		String val_lastname= Text.of(TravelerData.VALIDATION_LASTNAME).viewedBy(actor).asString();
+		
+		if(val_name.equalsIgnoreCase(name) && val_lastname.equalsIgnoreCase(lastname))
+   	  
+   	  return true;
+   	  else 
+   	  return false;
+
+	}
+	
+	
+	 public static  ValidateData data(String name,String lastname){
+	        return new ValidateData(name,lastname);
+
+}
+	 
+}

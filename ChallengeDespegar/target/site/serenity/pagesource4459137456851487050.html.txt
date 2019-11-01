@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head>
+		 
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta http-equiv="content-language" content="es" />
+				
+					<link rel="shortcut icon" type="image/png" href="/pics/favicon.png?version=1571424188" />
+			
+				<script type="text/javascript">var $REN_SITEKEY = 'HUBLE-MEDELLIN';</script>
+		<script type="text/javascript">var $REN_ERRORPAGE = '/error';</script>
+		<link rel="stylesheet" type="text/css" media="all" href="/css/kaelyn.css?version=1571424188" />
+		<script type="text/javascript" src="/js/kaelyn/jquery.js?version=1571424188"></script>
+		<script type="text/javascript" src="/js/kaelyn/ren.js?version=1571424188"></script>
+		<script type="text/javascript" src="/js/kaelyn/kaelynPopup.js?version=1571424188"></script>
+				<meta name="format-detection" content="yes" />
+		<meta name="viewport" content="initial-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		
+				 
+					<link rel="stylesheet" type="text/css" media="all" href="/css/profile.css?version=1571424188" />
+				
+					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&amp;subset=latin%2Clatin-ext&amp;ver=4.5.4" />
+			<link rel="stylesheet" media="all" href="/css/font-awesome.min.css?version=1571424188" />
+				
+		<script type="text/javascript" src="/js/cowork.js?version=1571424188"></script>
+		
+		<script type="text/javascript">
+
+			Date.prototype.nameOfMonths = ['enero','febrero','marzo','abril','Mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+			Date.prototype.nameOfMonthsIn = ['[[Month.1.in]]','[[Month.2.in]]','[[Month.3.in]]','[[Month.4.in]]','[[Month.5.in]]','[[Month.6.in]]','[[Month.7.in]]','[[Month.8.in]]','[[Month.9.in]]','[[Month.10.in]]','[[Month.11.in]]','[[Month.12.in]]'];
+			Date.prototype.nameOfDays = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+			Date.prototype.nameOfDaysShort = ['Do','Mes','Mar','Mie','Th','fr','sa'];
+		
+			if (typeof $_key === 'undefined') {
+	var $_key = [];
+	$_key['BOOLEAN.true'] = 'si';
+	$_key['BOOLEAN.false'] = 'no';
+	$_key['TimeField.formatNote'] = 'Usar formato HH:MM';
+	$_key['calendar.create'] = 'Haga click para crear reservación';
+	$_key['calendar.cancel'] = 'Haga click para cancelar reservación';
+	$_key['calendar.drag'] = 'Arrastre y suelte para mover el tiempo final';
+	$_key['calendar.move'] = 'Arrastre y suelte para mover el tiempo de inicioH';
+	$_key['calendar.popup.selectTime'] = 'Seleccionar tiempo';
+	$_key['calendar.popup.selectTime.from'] = 'Desde';
+	$_key['calendar.popup.selectTime.to'] = 'Hasta';
+	$_key['continue'] = 'Continuar';		
+	$_key['storno'] = 'Storno';		
+	$_key['You have to select %s or more minutes.'] = 'Has seleccionado   o mas minutos';
+}
+
+	
+	function rDateToField(date) {
+		var d = date.getUTCDate();
+	    var m = date.getUTCMonth()+1;
+	    var y = date.getUTCFullYear();
+	    return (("00"+d).slice(-2))+"/"+(("00"+m).slice(-2))+"/"+y;
+	}
+	
+	function rDateToValue(value, checkOnly, noYear) {
+		
+		if (checkOnly === undefined) checkOnly = false;
+		var arr = value.split("/");
+		if (arr.length == 3) {
+			var d = parseInt(arr[0]);
+			var m = parseInt(arr[1]);
+			var y = parseInt(arr[2]);
+			if (noYear) {
+				var newVal = ("00"+m).slice(-2)+"-"+("00"+d).slice(-2);
+				if (checkOnly) {
+			    	return newVal;
+			    } else {
+				    if (rDateToClient(newVal, true, noYear) == value) {
+	 					return newVal;
+					}
+				    return value;
+			    }
+			} else {
+				var newVal = ("0000"+y).slice(-4)+"-"+("00"+m).slice(-2)+"-"+("00"+d).slice(-2);
+				if (checkOnly) {
+			    	return newVal;
+			    } else {
+				    if (rDateToClient(newVal, true, noYear) == value) {
+						return newVal;
+					}
+				    return value;
+			    }
+			}
+			
+		}
+		return value;
+	}
+	
+
+
+var selectTimeLimit = 4			
+							
+		</script>
+		
+					 
+				
+		
+				
+				
+				
+		
+												
+		
+		
+	</head>
+	<body class="myHub &#9;&#9;&#9;myNewLayoutUnsigned&#10;&#9;&#9;&#9;">
+		
+							
+
+	
+	
+		
+		 		 
+				
+			<div id="myHubBody">
+		
+
+				<div id="myHubHeader">
+				
+						
+					<div id="myHubHeaderPanel">
+							
+					
+					
+															
+								 
+								
+								 
+								
+														
+							
+							<div id="myHubUser">
+								 				
+							</div>
+										
+									
+					</div>	
+								
+					
+								
+										
+				</div>
+				
+		<div id="myHubBodyPadding">
+			
+				
+			<div id="myHubBodyPaddingInner" class="pageContent">
+		
+
+
+					
+								
+					
+			
+														<h1 style="font-size: 180%;" class="hubLogo noPrint">
+										<span><small>Impact</small><br /> Hub</span>
+											Medellín										 
+						<img alt="noi co.creative spaces" class="noi-logo" src="/customizations/medellin.impacthub.net/pics/noi1.png?version=1571424188" />														</h1>
+									<br />
+						
+					
+		
+			
+						 			 	
+						
+				<h2>Login to Hub WIFI</h2>
+							
+
+<form name="save" class="" enctype="multipart/form-data" action="/hotspot/meraki/5269/a95cbec63ec2002c4259264d8772c68d!save" method="post"><input type="hidden" name="____secTokenId" value="2288224" /><input type="hidden" name="____secToken" value="7f050d7b445e81e9bd7603694c151b53" />
+	<p class="centered">
+		Insert your email: <input tabindex="1" id="save_email" class=" txt required " type="text" name="email" value="" /><style type="text/css" nonce="b5633186ba950d902d5a402dc79da96d">#save_email { width: 20em;; } </style>		<input tabindex="2" class="button next btn primary" type="submit" value="[[Continuar]]" />	</p>
+	
+	<script type="application/javascript" nonce="b5633186ba950d902d5a402dc79da96d">		$('input[name="email"]').focus();
+	</script>	
+</form>
+
+	<div class="cleaner noPrint"></div>
+	
+	
+
+		</div>			
+	</div>
+	
+	<div id="footer">
+	
+	
+				
+							<span class="footerNote">
+					Version 18/10/2019 
+					| Section: 				</span>
+						
+			© 2013 - 2019 
+			
+							Impact Hub Medellin						
+							
+								
+											
+				| <a href="mailto:support@bitcarvers.com">¿Encontraste un error?</a>
+			
+				
+						
+						
+				 
+		 
+		 
+		
+	
+	</div>
+
+</div>
+
+
+
+
+
+</body></html>
